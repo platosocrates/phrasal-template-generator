@@ -1,11 +1,10 @@
-# Phrasal template generator
-
-- Approx. completion time: **1.5 hours**
-- Deliverables: **1 HTML file, 1 JS file**
-
+---
+summary: 'A Javascript coding exercise where a user will be able to generate 1 of 3 random stories.'
+time: '1.5 hours'
+deliverables: '1 HTML file, 1 JS file'
 ---
 
-**A Javascript coding exercise where a user will be able to generate 1 of 3 random stories.**
+# Phrasal template generator
 
 - *Fork this repository.*
 - Collect 4 pieces of information from the user:
@@ -30,4 +29,4 @@ Create the interaction shown in the linked video.
 
 ## Hand in
 
-Drop this folder into your Markbot application. Make sure to fix all the errors. And submit to Canvas using Markbot.
+Drop this folder into your Markbot application. Make sure to fix all the errors. And submit online.

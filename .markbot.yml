@@ -1,16 +1,23 @@
 repo: "phrasal-template-generator"
-canvasCourse: "467503"
-canvasAssignment: "4202500"
 
 naming: true
-commits: 2
+restrictFileTypes: true
+liveWebsite: true
+
+git:
+  numCommits: 2
+  allCommitted: true
+  allSynced: true
 
 html:
   - path: "index.html"
     valid: true
     bestPractices: true
     has:
-      - "script"
+      - 'script[src="js/main.js"]'
+    hasNot:
+      - ['link', 'CSS isn’t necessary to complete this assignment']
+      - ['body :not(script)', 'The `<script>` tag should be the only tag inside `<body>` — no other HTML is needed']
 
 js:
   - path: "js/main.js"
@@ -31,5 +38,26 @@ js:
       - "A past tense verb"
       - "Which story would you like?"
       - "After snacking"
-      - "Ameilia"
+      - "Amelia"
       - "Jackson chose"
+
+functionality:
+  - path: 'index.html'
+    setup: |
+      window.__promptResponsies = [
+        'indigo',
+        'dragon',
+        'delicious',
+        'burped',
+        'a',
+      ];
+
+      window.prompt = function () {
+        return window.__promptResponsies.shift();
+      }
+    tests:
+      - |
+        let expectedResult = 'After snacking on delicious treats, the indigo bellied dragon burped for hours.';
+
+        if (document.body.textContent.trim() !== expectedResult) fail(`The story that was written out did not match what was expected. Story \`a\` was tested with the following words: \`indigo\` (colour), \`dragon\` (creature), \`delicious\` (adjective), \`burped\` (verb). This is the expected output: **“${expectedResult}”**`);
+        pass();
